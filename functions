@@ -1,0 +1,99 @@
+//Function declaration
+function add(a,b){
+  return a*b;
+}
+console.log(add(2,3))
+
+//Function expression
+const add1 = function(a,b){
+  return a+b;
+}
+console.log(add1(10,3))
+
+// Arrow Function
+const multiply = (a, b) => a*b;
+console.log(multiply(3, 4)); 
+
+const arrowSum=(a,b)=>{
+  console.log(a+b);
+};
+arrowSum(1,7);
+
+//default parameters
+function greet(name = 'Guest') {
+    return `Hello, ${name}!`;
+}
+console.log(greet());
+console.log(greet('Alice'));
+
+//rest parameters
+function sum(...numbers){
+  let total = 0;
+  for(let number of numbers){
+    total += number;
+  }
+  return total;
+}
+console.log(sum(1,2,3,4,5));
+//(...=spread operator)
+
+//destructuring parameters
+function getFullName({fName,lName}){
+  return `${fName} ${lName}`;
+}
+
+const user={
+  fName:'Kanika',
+  lName:'Gupta',
+  gender:'female'
+}
+console.log(getFullName(user));
+
+//function naming conventions
+function addNumbers(a,b){
+  return a+b;
+}
+function subtractNumbers(a,b){
+  return a-b;
+}
+console.log(addNumbers(2,3))
+
+//pure functions
+function pow(x){
+  return x**0.5;
+}
+console.log(pow(4))
+
+//higher-order functions
+function createGreeting(message) {
+  return function(name) {
+      console.log(message + ", " + name);
+  };
+}
+
+const sayHello = createGreeting("Hello");
+const sayGoodbye = createGreeting("Goodbye");
+
+sayHello("Kanika");   
+sayGoodbye("Kanu");   
+
+//Error handling 
+function checkAge(age) {
+  if (age < 18) {
+      throw new Error("Age must be 18 or older.");
+  }
+  return "Age is valid.";
+}
+
+try {
+  let message = checkAge(16);
+  console.log(message);
+} catch (error) {
+  console.error("Validation error:", error.message);
+}
+
+//comments
+function add(a, b) {
+  // This function adds two numbers.
+  return a + b;
+}
